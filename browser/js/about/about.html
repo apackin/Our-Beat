@@ -1,11 +1,43 @@
-<section id="about">
-    <p>
-        This website--the very one at which you currently gaze--was created by a basic scaffolding
-        concocted at Fullstack Academy. Here are some of the people who make it all very real:
-    </p>
-    <carousel interval="2000">
-        <slide ng-repeat="image in images">
-            <img height="300" ng-src="{{ image }}" />
-        </slide>
-    </carousel>
-</section>
+    <link href="/style/examples.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/scripts/Tone.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/draggabilly.js"></script>
+    <script type="text/javascript" src="/scripts/Logo.js"></script>
+    <script type="text/javascript" src="/scripts/Interface.js"></script>
+    <script type="text/javascript" src="/scripts/nexusUI.js"></script>
+    <script type="text/javascript" src="/js/music.js"></script>
+    <script type="text/javascript" src="/js/nexusSetup.js" </script>
+
+<h1 id='title'>My Beat</h1>
+<main>
+    <section class='wrapper'>
+        <div id="noteController">
+            <form>
+                <br>
+                <input type="checkbox" id="lifeCheck" name="life" value="lifify"> Give Life </input>
+                <br>
+                <br>
+                <input type="checkbox" id="bpmIncrease" name="bpmIncrease" value="bpmIncrease"> Increase BPM </input>
+                <!-- checked -->
+                <br>
+                <br>
+                <input type="checkbox" id="bassDrop" name="bassDrop" value="bassDrop"> Bass Drops </input>
+            </form>
+        </div>
+        <div id="Content">
+            <div id="firstMatrix">
+                <canvas nx="matrix">
+                </canvas>
+                <button type="button" class="btn btn-success" onclick="addRow('matrix1')">Add Note</button>
+                <button type="button" class="btn btn-success" onclick="removeRow('matrix1')">Remove Note</button>
+            </div>
+            <button type="button" class="btn btn-success" onclick="createMatrix(-10,4)">Create Matrix</button>
+            <div id="secondMatrix">
+                <canvas nx="matrix" id="drumMatrix">
+                </canvas>
+                <button type="button" class="btn btn-success" onclick="addRow('drumMatrix')">Add Note</button>
+                <button type="button" class="btn btn-success" onclick="removeRow('drumMatrix')">Remove Note</button>
+            </div>
+        </div>
+    </section>
+</main>
