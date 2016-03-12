@@ -28,7 +28,7 @@ angular.module('myBeatApp').directive('header', function() {
         link: function(scope) {
         	var matId = 'matrix' + scope.part;
         	var noteOptions = window['selected'+scope.part+'Notes'].slice();
-            var matrixStorage;
+            var fireStorage;
         	scope.noteOptions = noteOptions;
             scope.currentVolume = 1;
         	scope.notesInputs = [];
@@ -40,13 +40,14 @@ angular.module('myBeatApp').directive('header', function() {
             setTimeout(initializeFirebase, 1000);
 
             function initializeFirebase () {
-                matrixStorage = new Firebase('https://sharedbeat.firebaseio.com/'+scope.part);
+                fireStorage = new Firebase('https://sharedbeat.firebaseio.com/'+scope.part);
                 updateFirebase();
             }
 
             function updateFirebase () {
                 setTimeout(function(){
-                    matrixStorage.push({matrix:window[matId].matrix});
+                    fireStorage.update({matrix:window[matId].matrix});
+                    // console.log(fireStorage);
                     scope.$watch(window[matId].matrix, updateFirebase);
                 }, 500);
             }
@@ -63,6 +64,12 @@ angular.module('myBeatApp').directive('header', function() {
 		        window[matId].row++;
 		        addSelector();
                 setMatrixSize(window[matId]);
+
+                // var newRowObject = {};
+                // newRowObject[window[matId].row-1] = 0;
+                // for (var i = 0; i < 16; i++) {
+                //     fireStorage.child('/matrix/' + i).update(newRowObject)
+                // };
 		    }
 
 		    scope.removeRow = function () {
