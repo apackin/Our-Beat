@@ -28,6 +28,8 @@ $(function(){
     start : function(){
       Tone.Transport.start();
       loop.start();
+      [matrixLead, matrixDrum, matrixBass].forEach(matrix => 
+      {matrix.sequence(Tone.Transport.bpm.value * 4)});
     },
     end : function(){
       Tone.Transport.stop();

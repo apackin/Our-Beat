@@ -8,40 +8,31 @@
     <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="/style.css" rel="stylesheet" />
     <link href="/style/examples.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="/angular/angular.js" ></script>
-    <script type="text/javascript" src="/angular-ui-router/release/angular-ui-router.js" ></script>
-    <script type="text/javascript" src="/angular-messages/angular-messages.js" ></script>
-    <script type="text/javascript" src="/scripts/Tone.js" ></script>
-    <script type="text/javascript" src="/scripts/jquery.min.js" ></script>
-    <script type="text/javascript" src="/scripts/draggabilly.js" ></script>
-    <script type="text/javascript" src="/scripts/Logo.js" ></script>
-    <script type="text/javascript" src="/scripts/Interface.js" ></script>
-    <script type="text/javascript" src="/scripts/nexusUI.js" ></script>
-    <script type="text/javascript" src="/js/app.js" ></script>
-    <script type="text/javascript" src="/js/directives/directive.sequencer.js" ></script>
-    
-
+    <script type="text/javascript" src="/angular/angular.js"></script>
+    <script type="text/javascript" src="/angular-ui-router/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="/angular-messages/angular-messages.js"></script>
+    <script type="text/javascript" src="/scripts/Tone.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/scripts/draggabilly.js"></script>
+    <script type="text/javascript" src="/scripts/Logo.js"></script>
+    <script type="text/javascript" src="/scripts/Interface.js"></script>
+    <script type="text/javascript" src="/scripts/nexusUI.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/directives/directive.sequencer.js"></script>
+    <script type="text/javascript" src="/js/music.js"></script>
+    <script type="text/javascript" src="/js/nexusSetup.js"></script>
 </head>
+
 <body ng-app="myBeatApp">
-<header></header>
-<main ng-controller="mainCtrl">
-    <section class='wrapper'>
-        <div id="Content">
-            <div ng-repeat="part in parts track by $index">
-                <sequencer part="part"></sequencer>
-            </div>
-
-           <!--  
-           TODO: Allow User to Add more Matrices (why whould they do this?)
-            <button type="button" class="btn btn-success" ng-click="addPart('Drum')">Add Drum Kit</button>
-            <button type="button" class="btn btn-success" ng-click="addPart('Bass')">Add Bass</button>
-            <button type="button" class="btn btn-success" ng-click="addPart('Lead')">Add Lead</button> -->
-    </section>
-</main>
-<script type="text/javascript" src="/js/music.js" ></script>
-<script type="text/javascript" src="/js/nexusSetup.js" </script>
-</script>
-
+    <header></header>
+    <main ng-controller="mainCtrl">
+        <section class='wrapper'>
+            <div id="Content">
+                <div ng-repeat="part in parts track by $index">
+                    <sequencer part="part"></sequencer>
+                </div>
+        </section>
+    </main>
 </body>
 
 </html>

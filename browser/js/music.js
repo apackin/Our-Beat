@@ -19,6 +19,11 @@ var selectedDrumSamples = {
     "Snare3": "drumSamples/Snares/biab_snappy_snare_10.wav",
     "Snare4": "drumSamples/Snares/biab_snappy_snare_14.wav",
     "Snare5": "drumSamples/Snares/biab_snappy_snare_18.wav",
+    "Cymbals1": "drumSamples/Cymbals/VES2 Crash 01.wav",
+    "Cymbals2": "drumSamples/Cymbals/VES2 Ride 48.wav",
+    "Cymbals3": "drumSamples/Cymbals/VES2 Crash 37.wav",
+    "Cymbals4": "drumSamples/Cymbals/VES2 Ride 01.wav",
+    "Cymbals5": "drumSamples/Cymbals/VES2 Crash 48.wav",
 };
 
 var DrumSynth = new Tone.PolySynth(4, Tone.Sampler, selectedDrumSamples, {
@@ -31,7 +36,7 @@ var LeadSynth = new Tone.PolySynth(6, Tone.SimpleSynth, {
 }).toMaster();
 
 var BassSynth = new Tone.MonoSynth({
-    "volume": -4,
+    "volume": -3,
     "envelope": {
         "attack": 0.1,
         "decay": 0.3,
@@ -48,7 +53,7 @@ var BassSynth = new Tone.MonoSynth({
 
 var selectedLeadNotes = ["G", "E", "D", "C", "A", "B", "F"];
 var selectedLeadOptions = ["3", "3", "3", "3", "3"];
-var selectedDrumNotes = ["ClosedHat", "OpenHat", "Kick", "Snare"];
+var selectedDrumNotes = ["ClosedHat", "OpenHat", "Kick", "Snare", "Cymbals"];
 var selectedDrumOptions = ["3", "3", "3", "3", "3"];
 var selectedBassNotes = ["G", "E", "D", "C", "A", "B", "F"];
 var selectedBassOptions = ["2", "2", "2", "2", "3"];
@@ -81,10 +86,7 @@ function funcTriggerNotes (matrixPlaying, part, time, col){
 }
 
 function realignView (matrixPlaying) {
-    // matrixPlaying.stop();
-    // setTimeout(
     matrixPlaying.sequence(Tone.Transport.bpm.value * 4)
-    // , 100);
 }
 
 

@@ -409,7 +409,7 @@ body {
   -moz-animation-iteration-count: infinite;
   animation-iteration-count: infinite; }
 
-#title {
+.title {
   color: #414141;
   letter-spacing: 2px;
   padding-bottom: 20px;
