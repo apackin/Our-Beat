@@ -28,13 +28,29 @@ angular.module('myBeatApp').directive('header', function() {
         link: function(scope) {
         	var matId = 'matrix' + scope.part;
         	var noteOptions = window['selected'+scope.part+'Notes'].slice();
+            var matrixStorage;
         	scope.noteOptions = noteOptions;
             scope.currentVolume = 1;
         	scope.notesInputs = [];
+            // scope.noteSelected = window['selected'+scope.part+'Notes'];
 
 
             // can only check number of rows after they are drawn
-        	setTimeout(numberOfRows, 500);
+            setTimeout(numberOfRows, 500);
+            setTimeout(initializeFirebase, 1000);
+
+            function initializeFirebase () {
+                matrixStorage = new Firebase('https://sharedbeat.firebaseio.com/'+scope.part);
+                updateFirebase();
+            }
+
+            function updateFirebase () {
+                setTimeout(function(){
+                    matrixStorage.push({matrix:window[matId].matrix});
+                    scope.$watch(window[matId].matrix, updateFirebase);
+                }, 500);
+            }
+
         	scope.selectedANote = function (idx, note) {
         		window['selected'+scope.part+'Notes'][idx] = note;
         	}
@@ -56,7 +72,6 @@ angular.module('myBeatApp').directive('header', function() {
 		    }
 
             scope.updateVolume = function () {
-                console.log(window[scope.part+'Synth']);
                 window[scope.part+'Synth'].volume.input.value = scope.currentVolume;
             }
 

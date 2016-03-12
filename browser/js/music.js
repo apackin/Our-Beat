@@ -89,20 +89,4 @@ function realignView (matrixPlaying) {
     matrixPlaying.sequence(Tone.Transport.bpm.value * 4)
 }
 
-
-// TODO allow user to add and remove matrices
-// function createDrumKit(vol, notes) {
-
-//     console.log('inFunc', matrixDrum);
-//     matrixDrum.col = 16;
-//     matrixDrum.row = 4;
-//     matrixDrum.resize($("#Content").width(), 250);
-
-//     drums = new Tone.PolySynth(4, Tone.Sampler, selectedDrumSamples, {
-//         "volume": vol,
-//     }).toMaster();
-
-// }
-
-//set the transport
 Tone.Transport.bpm.value = 90;
