@@ -38,9 +38,11 @@ $(function(){
 
   Interface.Loader();
   $(window).on("resize", function(){
-    [matrixLead, matrixDrum, matrixBass].forEach(matrix => 
-      {matrix.resize($("#Content").width()/1.3, $("#Content").width()/10);
-       matrix.draw();})
+    [matrixLead, matrixDrum, matrixBass].forEach(matrix => {
+          var matHeight = (matrix.row*35)
+          matrix.resize($("#Content").width()/1.3, matHeight);
+          matrix.draw();
+    })
   });
 });
 

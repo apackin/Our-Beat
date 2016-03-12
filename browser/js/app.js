@@ -1,11 +1,7 @@
 angular.module('myBeatApp', [])
 
 .controller('mainCtrl', function($scope) {
-    $scope.a = 1;
-    $scope.b = 2;
     $scope.parts = ['Drum', 'Bass', 'Lead'];
-
-
 })
 
 .directive('header', function() {
@@ -56,17 +52,21 @@ angular.module('myBeatApp', [])
 
 	        scope.addRow = function () {
 		        window[matId].row++;
-		        window[matId].draw();
 		        addSelector();
-                // window[matId]resize($("#Content").width()/1.3, $("#Content").width()/10);
+                setMatrixSize(window[matId]);
 		    }
 
 		    scope.removeRow = function () {
 		        window[matId].row--;
-		        window[matId].draw();
 		        removeSelector();
-                // window[matId]resize($("#Content").width()/1.3, $("#Content").width()/10);
+                setMatrixSize(window[matId]);
 		    }
+
+            function setMatrixSize (matrix) {
+                var matHeight = (matrix.row*35)
+                matrix.resize($("#Content").width()/1.3, matHeight);
+                matrix.draw();
+            }
 
 
         }

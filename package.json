@@ -1,7 +1,7 @@
 {
-  "name": "spotify-gol",
+  "name": "My-Beat",
   "version": "1.0.0",
-  "description": "This is our Spotify hackathon file.",
+  "description": "This is my FS Stackathon entry.",
   "main": "index.js",
   "scripts": {
     "start": "node server/index.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/apackin/SpotifyGoL.git"
+    "url": "git+https://github.com/apackin/myBeat.git"
   },
-  "author": "",
+  "author": "Assaf Packin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/apackin/SpotifyGoL/issues"
+    "url": "https://github.com/apackin/myBeat/issues"
   },
-  "homepage": "https://github.com/apackin/SpotifyGoL#readme",
+  "homepage": "https://github.com/apackin/myBeat#readme",
   "dependencies": {
     "angular": "^1.5.0",
     "angular-messages": "^1.5.0",
