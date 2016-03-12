@@ -1,6 +1,5 @@
-.idea
 node_modules
 npm-debug.log
 public
-.DS_Store
-coverage
+browser/sass/.sass-cache
+**/*.map

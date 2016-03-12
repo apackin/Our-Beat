@@ -371,11 +371,6 @@ th {
 body {
   padding: 30px 0; }
 
-main {
-  background: #F6F6F6;
-  padding: 20px 0;
-  min-height: 1000px; }
-
 .wrapper {
   max-width: 80%;
   margin-left: auto;
@@ -448,16 +443,8 @@ section{
 }
 
 #Content {
-  max-width: 75%;
-  margin-left: 20%;
+  max-width:  100%;
   display: inline-block;
-}
-
-#noteController {
-  max-width: 20%;
-  display: inline-block;
-  text-align: center;
-  margin-left: 1%;
 }
 /*This messes up the matrix clickability*/
 
