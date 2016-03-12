@@ -1,4 +1,4 @@
-# SpotifyGoL
-This is our Spotify hackathon file.
+# My Beat 
+This project will allow users to create and use their own step sequencer online.
 
-We are using Tone.Js to create a http://tonejs.org/examples/stepSequencer.html that generates based on Conway's Game of Life.
+I am Tone.Js to create the synthesizers and NexusUI for the matrices.
