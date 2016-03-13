@@ -27,13 +27,41 @@ angular.module('myBeatApp').directive('header', function() {
         },
         link: function(scope) {
         	var matId = 'matrix' + scope.part;
-        	var noteOptions = window['selected'+scope.part+'Notes'].slice();
+            scope.noteOptions = window['selected'+scope.part+'Notes'].slice();
+            scope.octOptions = window['selected'+scope.part+'Options'].slice();
             var fireStorage;
-        	scope.noteOptions = noteOptions;
             scope.currentVolume = 1;
         	scope.notesInputs = [];
-            // scope.noteSelected = window['selected'+scope.part+'Notes'];
 
+            scope.selectedANote = function (idx, note) {
+                window['selected'+scope.part+'Notes'][idx] = note;
+            }
+
+            scope.selectedAnOption = function (idx, opt) {
+                window['selected'+scope.part+'Options'][idx] = opt;
+            }
+
+            scope.addRow = function () {
+                window[matId].row++;
+                addSelector();
+                setMatrixSize(window[matId]);
+
+                // var newRowObject = {};
+                // newRowObject[window[matId].row-1] = 0;
+                // for (var i = 0; i < 16; i++) {
+                //     fireStorage.child('/matrix/' + i).update(newRowObject)
+                // };
+            }
+
+            scope.removeRow = function () {
+                window[matId].row--;
+                removeSelector();
+                setMatrixSize(window[matId]);
+            }
+
+            scope.updateVolume = function () {
+                window[scope.part+'Synth'].volume.input.value = scope.currentVolume;
+            }
 
             // can only check number of rows after they are drawn
             setTimeout(numberOfRows, 500);
@@ -41,7 +69,7 @@ angular.module('myBeatApp').directive('header', function() {
 
             function initializeFirebase () {
                 fireStorage = new Firebase('https://sharedbeat.firebaseio.com/'+scope.part);
-                updateFirebase();
+                // updateFirebase();
             }
 
             function updateFirebase () {
@@ -50,36 +78,6 @@ angular.module('myBeatApp').directive('header', function() {
                     // console.log(fireStorage);
                     scope.$watch(window[matId].matrix, updateFirebase);
                 }, 500);
-            }
-
-        	scope.selectedANote = function (idx, note) {
-        		window['selected'+scope.part+'Notes'][idx] = note;
-        	}
-
-        	scope.selectedAnOption = function (idx, opt) {
-        		window['selected'+scope.part+'Options'][idx] = opt;
-        	}
-
-	        scope.addRow = function () {
-		        window[matId].row++;
-		        addSelector();
-                setMatrixSize(window[matId]);
-
-                // var newRowObject = {};
-                // newRowObject[window[matId].row-1] = 0;
-                // for (var i = 0; i < 16; i++) {
-                //     fireStorage.child('/matrix/' + i).update(newRowObject)
-                // };
-		    }
-
-		    scope.removeRow = function () {
-		        window[matId].row--;
-		        removeSelector();
-                setMatrixSize(window[matId]);
-		    }
-
-            scope.updateVolume = function () {
-                window[scope.part+'Synth'].volume.input.value = scope.currentVolume;
             }
 
             function numberOfRows () {
