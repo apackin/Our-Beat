@@ -14,6 +14,11 @@ angular.module('myBeatApp').directive('header', function() {
                     matrixPart.draw();
                 });
             }
+
+            scope.launch = function (type) {
+                var num = Math.ceil(Math.random()*5);
+                effectSamples.triggerAttack(type+num);
+            }
         }
     };
 })
@@ -63,21 +68,27 @@ angular.module('myBeatApp').directive('header', function() {
                 window[scope.part+'Synth'].volume.input.value = scope.currentVolume;
             }
 
-            // can only check number of rows after they are drawn
+             // can only check number of rows after they are drawn
             setTimeout(numberOfRows, 500);
             setTimeout(initializeFirebase, 1000);
 
             function initializeFirebase () {
                 fireStorage = new Firebase('https://sharedbeat.firebaseio.com/'+scope.part);
-                // updateFirebase();
+                fireStorage.on("value", function(snapshot) {
+                  window[matId].matrix = snapshot.val().matrix;
+                  window[matId].draw();
+                  updateFirebase();
+                }, function (errorObject) {
+                  console.log("The read failed: " + errorObject.code);
+                });
             }
 
             function updateFirebase () {
                 setTimeout(function(){
                     fireStorage.update({matrix:window[matId].matrix});
-                    // console.log(fireStorage);
+                    console.log(fireStorage);
                     scope.$watch(window[matId].matrix, updateFirebase);
-                }, 500);
+                }, 100);
             }
 
             function numberOfRows () {

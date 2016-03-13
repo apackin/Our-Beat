@@ -90,3 +90,22 @@ function realignView (matrixPlaying) {
 }
 
 Tone.Transport.bpm.value = 90;
+
+
+var effectSamples = new Tone.Sampler({
+    "Uplifter1" : "drumSamples/Uplifters/VES2 FX Uplifter 08.wav",
+    "Uplifter2" : "drumSamples/Uplifters/VES2 FX Uplifter 09.wav",
+    "Uplifter3" : "drumSamples/Uplifters/VES2 FX Uplifter 10.wav",
+    "Uplifter4" : "drumSamples/Uplifters/VES2 FX Uplifter 13.wav",
+    "Uplifter5" : "drumSamples/Uplifters/VES2 FX Uplifter 45.wav",
+    "Downlifter1" : "drumSamples/Downlifters/VES2 FX Downlifter 02.wav",
+    "Downlifter2" : "drumSamples/Downlifters/VES2 FX Downlifter 05.wav",
+    "Downlifter3" : "drumSamples/Downlifters/VES2 FX Downlifter 12.wav",
+    "Downlifter4" : "drumSamples/Downlifters/VES2 FX Downlifter 20.wav",
+    "Downlifter5" : "drumSamples/Downlifters/VES2 FX Downlifter 24.wav",
+    "BassDrop1" : "drumSamples/BassDrops/49747__AaronGNP__GNP_Bass_Drum_Drop_The_Soap-24b.wav",
+    "BassDrop2" : "drumSamples/BassDrops/49747__AaronGNP__GNP_Bass_Drum_Drop_The_Soap-24b.wav",
+    "BassDrop3" : "drumSamples/BassDrops/49747__AaronGNP__GNP_Bass_Drum_Drop_The_Soap-24b.wav",
+    "BassDrop4" : "drumSamples/BassDrops/49747__AaronGNP__GNP_Bass_Drum_Drop_The_Soap-24b.wav",
+    "BassDrop5" : "drumSamples/BassDrops/49747__AaronGNP__GNP_Bass_Drum_Drop_The_Soap-24b.wav",
+}).toMaster();
