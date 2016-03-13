@@ -68,6 +68,16 @@ angular.module('myBeatApp').directive('header', function() {
                 window[scope.part+'Synth'].volume.input.value = scope.currentVolume;
             }
 
+            scope.clearMatrix = function () {
+                matrixPart = window[matId];
+                for (var i=0; i<matrixPart.row; i++) {
+                    for (var j=0; j<16; j++) {
+                        matrixPart.matrix[j][i] = 0;
+                    }
+                }
+                matrixPart.draw();
+            }
+
              // can only check number of rows after they are drawn
             setTimeout(numberOfRows, 500);
             setTimeout(initializeFirebase, 1000);
