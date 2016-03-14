@@ -50,12 +50,6 @@ angular.module('myBeatApp').directive('header', function() {
                 window[matId].row++;
                 addSelector();
                 setMatrixSize(window[matId]);
-
-                // var newRowObject = {};
-                // newRowObject[window[matId].row-1] = 0;
-                // for (var i = 0; i < 16; i++) {
-                //     fireStorage.child('/matrix/' + i).update(newRowObject)
-                // };
             }
 
             scope.removeRow = function () {
@@ -80,10 +74,15 @@ angular.module('myBeatApp').directive('header', function() {
 
              // can only check number of rows after they are drawn
             setTimeout(numberOfRows, 500);
-            setTimeout(initializeFirebase, 1000);
+            setTimeout(initializeFirebase, 2000);
 
             function initializeFirebase () {
                 fireStorage = new Firebase('https://sharedbeat.firebaseio.com/'+scope.part);
+                alignFirebaseData(); 
+                // updateFirebase();
+            }
+
+            function alignFirebaseData () {
                 fireStorage.on("value", function(snapshot) {
                   window[matId].matrix = snapshot.val().matrix;
                   window[matId].draw();
@@ -96,10 +95,10 @@ angular.module('myBeatApp').directive('header', function() {
             function updateFirebase () {
                 setTimeout(function(){
                     fireStorage.update({matrix:window[matId].matrix});
-                    console.log(fireStorage);
                     scope.$watch(window[matId].matrix, updateFirebase);
                 }, 100);
             }
+
 
             function numberOfRows () {
                 for (var i = 0; i < window[matId].row; i++) {
