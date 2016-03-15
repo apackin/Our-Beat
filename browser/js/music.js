@@ -37,23 +37,36 @@ var LeadSynth = new Tone.PolySynth(6, Tone.SimpleSynth, {
 
 var BassSynth = new Tone.MonoSynth({
     "volume": -3,
+    filter:{
+        Q: 2,
+        type:"lowshelf",
+        frequency:200,
+        gain: -24,
+    },
+    filter:{
+        type:"lowpass",
+        Q: 0.5,
+        frequency:10000,
+        gain: -24,
+    },
     "envelope": {
-        "attack": 0.1,
-        "decay": 0.3,
-        "release": 2,
+        "attack": 0.001,
+        "decay": 1,
+        "sustain": 0.4,
+        "release": 0.1,
     },
     "filterEnvelope": {
         "attack": 0.001,
-        "decay": 0.01,
-        "sustain": 0.5,
-        "baseFrequency": 100,
+        "decay": 0.31,
+        "sustain": 1,
+        "baseFrequency": 150,
         "octaves": 2.6
     }
 }).toMaster();
 
 var selectedLeadNotes = ["G", "E", "D", "C", "A", "B", "F"];
-var selectedLeadOptions = ["3", "3", "3", "3", "3"];
-var selectedDrumNotes = ["ClosedHat", "OpenHat", "Kick", "Snare", "Cymbals"];
+var selectedLeadOptions = ["4", "4", "4", "4", "4"];
+var selectedDrumNotes = ["ClosedHat", "OpenHat", "Snare", "Kick", "Cymbals"];
 var selectedDrumOptions = ["3", "3", "3", "3", "3"];
 var selectedBassNotes = ["G", "E", "D", "C", "A", "B", "F"];
 var selectedBassOptions = ["2", "2", "2", "2", "3"];

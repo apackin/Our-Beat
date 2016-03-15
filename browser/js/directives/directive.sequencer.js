@@ -73,8 +73,8 @@ angular.module('myBeatApp').directive('header', function() {
             }
 
              // can only check number of rows after they are drawn
-            setTimeout(numberOfRows, 500);
-            setTimeout(initializeFirebase, 2000);
+            setTimeout(numberOfRows, 2000);
+            setTimeout(initializeFirebase, 3000);
 
             function initializeFirebase () {
                 fireStorage = new Firebase('https://sharedbeat.firebaseio.com/'+scope.part);
