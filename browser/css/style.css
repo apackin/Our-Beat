@@ -238,7 +238,9 @@ th {
   font-weight: 300; }
 
 body {
-  padding: 30px 0; }
+  padding: 30px 0;
+  background: #5CC1E2; 
+}
 
 .wrapper {
   max-width: 80%;
@@ -284,17 +286,99 @@ section{
 }
 
 #Content {
-  max-width:  100%;
+  width: 100%;
   display: inline-block;
 }
 
-/*#headerDiv {
-  background: lightblue;
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 0;
+  width: 95%;
+  height: 20px;
+  background: #00007D;
+}
 
-}*/
+input[type=range]:focus {
+  outline: none;
+}
 
-/*.NoteSelecter {
-  display: inline-block;
-  max-width: 18%;
-}*/
-/*# sourceMappingURL=style.css.map */
+input[type=range]::-webkit-slider-runnable-track {
+  width: 95%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: white;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: white;
+}
+input[type=range]::-moz-range-track {
+  width: 95%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: white;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 95%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  border-width: 16px 0;
+  color: #FFFFFF;
+}
+input[type=range]::-ms-fill-lower {
+  background: white;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: white;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: white;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
