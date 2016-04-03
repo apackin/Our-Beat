@@ -8,6 +8,7 @@ nx.onload = function(){
     });
 
       nx.startPulse();
+      nx.colorize("#FFF056")
 };
 $(function(){
   new Interface.Slider({

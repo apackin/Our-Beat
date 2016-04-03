@@ -38,29 +38,45 @@
 }
 
 #headerTitle {
-  color: #fff;
+  color: rgb(255,255,255);
   margin: 0px;
   padding-top: 20px;
   padding-bottom: 10px;
 }
 
 #headerDiv {
-  background: darkblue;
+/*  dark blue - Primary color */
+  background: #00007D;
 }
 
 #mainBreak {
-  background: orangered;
+/*  yellow - secondary color */
+  background: #FFF056;
 }
 
 .headerControls {
   display: flex;
   justify-content: space-around;
   width: 60%;
+  clear:both;
+}
+
+.sequencerControls {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  clear:both;
+}
+
+.sequencerNotes {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .btn-style {
-  color: #fff;
+  color: rgb(255,255,255);
   background-color: rgb(100,100,100);
   border-width: 3px;
-  border-color: darkblue;
+  border-color: #00007D;
 }
