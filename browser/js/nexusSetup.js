@@ -3,7 +3,7 @@ nx.onload = function(){
       {matrix.col = 16;
       matrix.row = 4;
       matrix.init();
-      matrix.resize($("#Content").width()/1.3, $("#Content").width()/10);
+      matrix.resize($("#Content").width()/1.3, (matrix.row*35));
       matrix.draw();
     });
 
@@ -42,8 +42,8 @@ $(function(){
   Interface.Loader();
   $(window).on("resize", function(){
     [matrixLead, matrixDrum, matrixBass].forEach(matrix => {
-          var matHeight = (matrix.row*35)
-          matrix.resize($("#Content").width()/1.3, matHeight);
+          var matrixHeight = (matrix.row*35)
+          matrix.resize($("#Content").width()/1.3, matrixHeight);
           matrix.draw();
     })
   });

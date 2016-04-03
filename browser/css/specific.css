@@ -42,6 +42,7 @@
   margin: 0px;
   padding-top: 20px;
   padding-bottom: 10px;
+  width: 100%;
 }
 
 #headerDiv {
@@ -62,6 +63,7 @@
 }
 
 .sequencerControls {
+  padding-top: 10px;
   display: flex;
   justify-content: space-around;
   width: 60%;
@@ -71,17 +73,19 @@
 .noteSelectLabels {
   margin-top: -20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .noteLabel {
   flex-grow: 2;
   padding-left: 5px;
+  min-width: 50px;
 }
 
 .octiveLabel {
   flex-grow: 1;
-  margin-left: 30px;
+  padding-left: 5px;
+  min-width: 20px;
 }
 
 .sequencerNotes {
