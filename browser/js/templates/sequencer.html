@@ -1,12 +1,23 @@
 <h3 class='title'>{{part}}</h3>
 <div class='col-xs-2 sequencerNotes'>
-    <div ng-repeat="input in notesInputs track by $index">
-        <select class='col-xs-8' ng-options="note as note for note in noteOptions" ng-model="noteSelected" ng-change="selectedANote({{$index}}, noteSelected)"></select>
-        <input class='col-xs-4' name='option' type='number' min='1' max='5' ng-model="optionSelected" ng-change="selectedAnOption({{$index}}, optionSelected)"></input>
-        <h6>{{noteSelected || noteOptions[$index]}}{{optionSelected || octOptions[$index]}}</h6>
+    <div class='noteSelectLabels'>
+        <div class='noteLabel'>Note: </div>
+        <div class='octiveLabel'>Tone: </div>
+    </div>
+    <div class='noteDiv' ng-repeat="input in notesInputs track by $index">
+        <select class='col-xs-8 noteSelect' ng-options="note as note for note in noteOptions" ng-model="noteSelected" ng-change="selectedANote({{$index}}, noteSelected)"></select>
+        <select class='col-xs-4 octiveSelect' name='option' ng-model="optionSelected" ng-change="selectedAnOption({{$index}}, optionSelected)">
+            <option selected disabled>{{optionSelected || octOptions[$index]}}</option>
+            <option value="1">1</option> 
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <h6>{{noteSelected || noteOptions[$index]}}</h6>
     </div>
 </div>
-<div class='col-xs-10'>
+<div class='col-xs-8'>
     <canvas ng-click="updateFirebase()" nx="matrix" id="matrix{{part}}">
     </canvas>
     <label id="rangeVol">Volume: {{currentVolume}}</label>

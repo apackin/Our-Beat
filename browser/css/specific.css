@@ -68,10 +68,51 @@
   clear:both;
 }
 
+.noteSelectLabels {
+  margin-top: -20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.noteLabel {
+  flex-grow: 2;
+  padding-left: 5px;
+}
+
+.octiveLabel {
+  flex-grow: 1;
+  margin-left: 30px;
+}
+
 .sequencerNotes {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
+}
+
+.noteDiv {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+}
+
+.noteSelect {
+  flex-grow: 2;
+  color: rgb(255,255,255);
+  background-color: rgb(100,100,100);
+  border-color: #00007D;
+  border-right-width: 1px;
+  border-bottom: 2px;
+  min-width: 70px;
+}
+
+.octiveSelect {
+  flex-grow: 1;
+  color: rgb(255,255,255);
+  background-color: rgb(100,100,100);
+  border-color: #00007D;
+  border-left-width: 1px;
+  border-bottom: 2px;
 }
 
 .btn-style {
