@@ -6,7 +6,8 @@
     <title>Our Beat</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-    <link href="/style.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/specific.css" rel="stylesheet" />
     <link href="/style/examples.css" rel="stylesheet" type="text/css">
     <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
     <script type="text/javascript" src="/angular/angular.js"></script>
@@ -27,7 +28,7 @@
 
 <body ng-app="myBeatApp">
     <header></header>
-    <main ng-controller="mainCtrl">
+    <main id="mainBreak" ng-controller="mainCtrl">
         <section class='wrapper'>
             <div id="Content">
                 <div ng-repeat="part in parts track by $index">

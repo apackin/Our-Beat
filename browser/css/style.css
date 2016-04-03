@@ -19,33 +19,10 @@ dfn {
   font-style: italic; }
 
 /**
- * Address styling not present in IE 8/9.
- */
-mark {
-  background: #ff0;
-  color: #000; }
-
-/**
  * Address inconsistent and variable font size in all browsers.
  */
 small {
   font-size: 80%; }
-
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sup {
-  top: -0.5em; }
-
-sub {
-  bottom: -0.25em; }
 
 /* Embedded content
    ========================================================================== */
@@ -272,34 +249,6 @@ body {
     content: "";
     display: table; }
 
-@-webkit-keyframes blink {
-  0% {
-    background-color: white; }
-  50% {
-    background-color: black; }
-  100% {
-    background-color: white; } }
-@-moz-keyframes blink {
-  0% {
-    background-color: white; }
-  50% {
-    background-color: black; }
-  100% {
-    background-color: white; } }
-@keyframes blink {
-  0% {
-    background-color: white; }
-  50% {
-    background-color: black; }
-  100% {
-    background-color: white; } }
-.blink {
-  -webkit-animation: blink 0.3s linear;
-  -moz-animation: blink 0.3s linear;
-  animation: blink 0.3s linear;
-  -webkit-animation-iteration-count: infinite;
-  -moz-animation-iteration-count: infinite;
-  animation-iteration-count: infinite; }
 
 .title {
   color: #414141;
