@@ -1,5 +1,5 @@
-# My Beat 
+# Our Beat 
 
-This project is my personal entry for Fullstack Acedamy's Stackethon. It will allow users to create, modify and use their own step sequencer online. 
+This project allows users to collaborate on making their own beat. Runs using an node/express server. Front-end is handled using angular, and data is persisted and shared using Firebase.
 
 I am using Tone.Js to create the synthesizers and NexusUI for the matrices.
